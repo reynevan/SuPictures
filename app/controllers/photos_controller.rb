@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  @@per_page = 10
+  @@per_page = 2
   def index
     @photos = Photo.all.page(page_nr).per(@@per_page)
   end
@@ -54,8 +54,17 @@ class PhotosController < ApplicationController
     @photos = Photo.where("lower(category) like ?", "%#{params[:category].downcase}%").page(page_nr).per(@@per_page)
   end
 
-  private
+  def download
+    @photo = Photo.find(params[:id])
 
+    send_file @photo.image.path,
+                :filename => @photo.image_file_name,
+                :type => @photo.image_content_type,
+                :disposition => 'attachment'
+    
+  end
+
+  private
     def photo_params
       params.require(:photo).permit(:name, :image, :tags, :category)
     end

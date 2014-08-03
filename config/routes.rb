@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'category/:category' => 'photos#categories'
   resources :photos, path: '/'
   get '/page/:page' => 'photos#index'
+  match 'photos/:id' => 'photos#download', :as => :download, via: [:get, :post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

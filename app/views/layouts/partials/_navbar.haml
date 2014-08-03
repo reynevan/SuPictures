@@ -1,5 +1,7 @@
 %ul.navibar
-  %li.title=link_to 'Photos', photos_path
+  %li.title
+    =image_tag('logo.png', size: "40x40", class: 'image-logo')
+    =link_to raw('<b>Su</b>Pictures'), photos_path
   %li.category 
     =link_to 'Abstract', '/category/abstract'
   %li.category
