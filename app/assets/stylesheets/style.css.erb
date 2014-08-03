@@ -1,0 +1,70 @@
+body {
+    background: url('<%= asset_path 'bground.jpg' %>');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+.image, .image-box {
+  width: 650px;
+  margin-bottom:10px;
+}
+.navibar li {
+  color: #eee;
+  list-style: none;
+  float: left;
+  font-weight: 200;
+  font-size: 1.8em;
+  margin-top: 10px;
+  padding:10px;
+}
+.navibar li.category{
+  position: relative;
+  top: 1px;
+  border-left: 1px dashed #7990a6;
+}
+.navibar{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  height: 80px;
+  background-color: rgba(155, 176, 200, 0.95);
+  min-width: 900px;
+  width:100%;
+  box-shadow: 0 0 10px #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.navibar .title{
+  font-weight: 400;
+}
+.search-button, .search-input{
+  background: none;
+  border:none;
+}
+.search-input{
+  border-bottom: 1px dashed #7990a6;
+  outline:none
+}
+
+.search-button:hover{
+  color: #fff;
+}
+.socials{
+  margin-top: 10px;
+}
+.info{
+  margin-top: 55px;
+  font-size: 1.8em;
+}
+.container-non-responsive {
+  /* Margin/padding copied from Bootstrap */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 100px;
+  /* Set width to your desired site width */
+  width: 1170px;
+}

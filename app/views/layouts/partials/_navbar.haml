@@ -1,0 +1,15 @@
+%ul.navibar
+  %li.title=link_to 'Photos', photos_path
+  %li.category 
+    =link_to 'Abstract', '/category/abstract'
+  %li.category
+    =link_to 'Food', '/category/food'
+  %li.category Category3
+  %li.category category4
+  %li.search 
+    =form_tag('/search', method: :get) do
+      =button_tag raw(fa_icon 'search'), class: 'search-button'
+      =text_field_tag :q ,'', class: 'search-input'
+  -if user_signed_in?
+    =link_to 'wyloguj', destroy_user_session_path, method: :delete
+      

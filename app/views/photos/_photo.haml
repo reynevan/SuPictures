@@ -1,0 +1,10 @@
+.photo-name
+  = photo.name
+  -if user_signed_in? and current_user.admin?
+    =link_to (fa_icon 'edit'), edit_photo_path(photo.id)
+.image-box
+  = link_to (image_tag photo.image.url, class: 'image'), photo.image.url
+  =fa_icon 'tags'
+  -photo.tagi.each do |tag|
+    %b
+      = link_to "##{tag}", "/search/#{tag}"
