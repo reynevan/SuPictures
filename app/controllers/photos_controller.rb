@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
 
   def new
     @photo = Photo.new
-    @categories = ['Abstract', 'Food']
+    @categories = ['Abstract', 'Food', 'Nature']
   end
  
   def edit
