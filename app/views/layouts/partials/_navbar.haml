@@ -14,4 +14,5 @@
       =text_field_tag :q ,'', class: 'search-input'
   -if user_signed_in?
     =link_to 'wyloguj', destroy_user_session_path, method: :delete
+    =link_to '+', new_photo_path
       

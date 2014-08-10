@@ -32,6 +32,15 @@ class PhotosController < ApplicationController
     end
   end
 
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.delete
+    respond_to do |format|
+      format.html { }
+     format.js { render layout: false }
+    end 
+  end
+
   def search
     redirect_to "/search/#{params[:q]}"
   end
