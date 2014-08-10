@@ -47,6 +47,7 @@ class PhotosController < ApplicationController
 
   def results
     @photos = Photo.where("lower(tags) like ?", "%#{params[:q].downcase}%").page(page_nr).per(@@per_page)
+    render 'search'
   end
 
   def create
